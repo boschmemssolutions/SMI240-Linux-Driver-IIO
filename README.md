@@ -9,7 +9,7 @@
 
 ## Introduction <a name=Intro></a>
 
-The SMI240 is a combined three axis angular rate and three axis acceleration sensor module with a measurement range of +/-300°/sand up to 16g. SMI240 is a 6 DoF (Degrees of Freedom) sensor module providing acceleration and angular rate signals via a digital interface (SPI). The sensor consists of two Micro Electro Mechanical System (MEMS) elements and a sensor readoutASIC. The ASIC contains analogue front ends and a digital structure for signal processing and communication interface. The sensor module is available in a LGA (Land Grid Array) housing.  
+The SMI240 is a combined three axis angular rate and three axis acceleration sensor module with a measurement range of +/-300°/s and up to 16g. SMI240 is a 6 DoF (Degrees of Freedom) sensor module providing acceleration and angular rate signals via a digital interface (SPI). 
 
 ## Documentation <a name=Doc></a>
 
@@ -20,7 +20,7 @@ https://boschmemssolutions.github.io/iio/bosch_smi240_IIO.html
 See [LICENSE](drivers/iio/imu/smi240/LICENSE.md) file
 
 ## Sensor interfaces <a name=interfaces></a>
-* safety SPI
+* SPI
 
 ## Architecture <a name=Architecture></a>
 ```

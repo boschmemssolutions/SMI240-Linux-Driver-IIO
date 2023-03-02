@@ -1,0 +1,21 @@
+config SMI240
+	tristate "Bosch Sensor SMI240 Inertial Measurement Unit"
+	depends on SPI_MASTER
+	select IIO_BUFFER
+	select IIO_TRIGGERED_BUFFER
+	help
+	  Build driver for Bosch SMI240 6-axis IMU sensor.
+
+config SMI240_MAX_BUFFER_LEN
+	depends on SMI240
+	int "configue read buffer size"
+	default "1024"
+	help
+	  Considering using FIFO, 1024 bytes are big enough for most cases. Do not change this value if not sure.
+	  
+config SMI240_UNIT_TEST
+	tristate "Unit Test for SMI240"
+	depends on KUNIT=y
+	help
+	  Build Unit Test for Bosch SMI240 6-axis IMU sensor.
+
