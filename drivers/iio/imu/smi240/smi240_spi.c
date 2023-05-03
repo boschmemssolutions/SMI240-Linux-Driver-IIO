@@ -172,7 +172,6 @@ static int __init smi240_module_init(void)
 {
 	int err = 0;
 
-	smi240_dev.delay_ms = smi240_delay;
 	smi240_dev.xfer = smi240_spi_transfer;
 
 	err |= spi_register_driver(&smi240_driver);

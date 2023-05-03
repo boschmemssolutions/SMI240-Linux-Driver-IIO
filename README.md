@@ -51,19 +51,11 @@ The driver also exposes a set of sysfs nodes under /sys/bus/iio/devices/iio_devi
 # to find out which deveice you are working with, you can read the device name
 cat /sys/bus/iio/devices/iio:device0/name
 
-# read acc x raw value
-cat  /sys/bus/iio/devices/iio:device0/in_accel_x_raw
-# read acc y raw value
-cat  /sys/bus/iio/devices/iio:device0/in_accel_y_raw
-# read acc z raw value
-cat  /sys/bus/iio/devices/iio:device0/in_accel_z_raw
+# read acc raw value
+cat  /sys/bus/iio/devices/iio:device0/in_accel_x\&y\&z_raw
 
-# read gyro x raw value
-cat  /sys/bus/iio/devices/iio:device0/in_anglvel_x_raw
-# read gyro y raw value
-cat  /sys/bus/iio/devices/iio:device0/in_anglvel_y_raw
-# read gyro z raw value
-cat  /sys/bus/iio/devices/iio:device0/in_anglvel_z_raw
+# read gyro raw value
+cat  /sys/bus/iio/devices/iio:device0/in_anglvel_x\&y\&z_raw
 
 # read temprature
 cat  /sys/bus/iio/devices/iio:device0/in_temp_object_raw

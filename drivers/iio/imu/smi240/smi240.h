@@ -48,7 +48,7 @@
 #define _SMI240_H
 
 #define SENSOR_NAME    "SMI240"
-#define DRIVER_VERSION "0.1.0"
+#define DRIVER_VERSION "1.0.0"
 
 #define SET_BITS(reg_var, bitname, val)                                        \
 	(((reg_var) & ~(bitname##_MASK)) |                                     \
@@ -57,19 +57,14 @@
 #define GET_BITS(reg_var, bitname)                                             \
 	(((reg_var) & (bitname##_MASK)) >> (bitname##_POS))
 
-typedef int8_t (*smi240_com_fptr_t)(uint32_t request, uint32_t *data);
-
-typedef void (*smi240_delay_fptr_t)(uint32_t period);
-
 struct smi240_device {
-	uint8_t chip_id;
-	smi240_com_fptr_t read;
-	smi240_com_fptr_t write;
-	smi240_com_fptr_t xfer;
-	smi240_delay_fptr_t delay_ms;
+	uint16_t accel_filter_freq;
+	uint16_t anglvel_filter_freq;
+	uint16_t sign_of_channels;
+	uint8_t bite_reps;
+	int8_t (*xfer)(uint32_t request, uint32_t *data);
 };
 
-void smi240_delay(uint32_t msec);
 int smi240_probe(struct device *dev, struct smi240_device *smi240_dev);
 int smi240_remove(struct device *dev);
 
